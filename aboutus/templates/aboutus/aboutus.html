@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="main-container">
+    <h1>{% trans "About us" %}</h1>
+    <p>{% trans "MCubes is an educational project created as part of the study of web development. Here I apply my knowledge of JavaScript, CSS, and working with interfaces to make something useful and interesting." %}</p>
+    <p>{% trans "This is not a commercial product or a startup. It's just that a schoolboy from Moscow who is interested in programming and the Rubik's Cube decided to put theory and practice together. Each line of code is written independently, each bug is fixed manually, and each new feature is a step forward in mastering web technologies." %}</p>
+    <p>{% trans "Thank you for using my project!" %}</p>
+    <p class="PS">{% trans "Egor Elagin, 11th grade" %}</p>
+</div>
+<style>
+    #link-about-us{color: #ffad21;}
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 40px;
+        width: 80%;
+        height: 100%;
+        padding: 80px 10px 0 10px;
+    }
+</style>
+{% endblock %}
