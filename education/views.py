@@ -24,3 +24,6 @@ def course_2x2_def_5(request):
 ###  2x2 CLL
 def course_2x2_cll_introduction(request):
     return render(request, 'education/course_2x2_cll/course_2x2_cll_introduction.html')
+
+def course_2x2_cll_1(request):
+    return render(request, 'education/course_2x2_cll/course_2x2_cll_1.html')
