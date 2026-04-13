@@ -16,19 +16,54 @@
 .note{
   font-size: 1rem;
 }
+
+
+.content1{
+  gap: 40px;
+}
+
 .grid {
+  display: flex;
+  flex-direction: column;
+  /* gap: 15px; */
+  align-items: center;
+  width: fit-content;
+  justify-content: space-between;
+  background-color: #181818;
+  padding: 40px 0;
+  border-radius: 20px;
+}
+
+.grid > h2{
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 900px;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+
+
+.formula, .formula-card{
   display: flex;
   flex-direction: column;
   gap: 15px;
   align-items: center;
 }
 
-.row {
-  display: flex;
-  gap: 15px;
+.formula > p{
+  font-size: 24px;
 }
 
-
+.formula-card{
+  width: 450px;
+  margin-bottom: 40px;
+}
 
 .cube-face {
   width: 180px;
@@ -78,7 +113,7 @@
 }
 }
 
-.formula-card img{
+img{
   height: 180px;
   width: 180px;
 }
