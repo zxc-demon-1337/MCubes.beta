@@ -4,6 +4,24 @@
   align-items: center;
   justify-content: center;
   flex: 1;
+  /* position: relative */
+}
+.video{
+  display: flex;
+  height: 200px;
+  width: 200px;
+  background-color: rgb(75, 75, 75);
+  z-index: 2;
+  position: absolute;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.formula_button{
+  display: block;
+
 }
 
 .content h1,
