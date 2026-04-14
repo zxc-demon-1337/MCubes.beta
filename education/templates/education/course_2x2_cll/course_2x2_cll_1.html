@@ -8,12 +8,15 @@
 {% block container %}
     <main class="content1">
         <h1>{% trans 'Formules of CLL' %}</h1>
+        <div class="video" style="display: none;" id="vid_wrapper">
+            <video src="" id="video" height="180" width="180" muted autoplay loop></video>
+        </div>
         <div class="grid sune">
             <h2>{% trans 'sune' %}</h2>
             <div class="row"> 
                 <div class="sune-0-0 formula-card"><img src=" {% static 'education/images/cll/sune/0-0.svg' %}" alt="sune-0-0" height="180" width="180"><video src="" style="display: none;"></video><span class="formula">
-                    <p>R U R' U R U2 R'</p>
-                    <p>(U') R' U2 R U' R' U R</p>
+                    <p class="formula_button" data-src="sune/sune.0.0.1">R U R' U R U2 R'</p>
+                    <p class="formula_button" data-src="sune/sune.0.0.2">(U') R' U2 R U' R' U R</p>
                 </span></div>
                 <div class="sune-0-1 formula-card"><img src=" {% static 'education/images/cll/sune/0-1.svg' %}" alt=""height="180" width="180"><video src="" style="display: none;"></video><span class="formula">
                     <p>(U') R' F R2 F' R U2 R' U' R2</p>
@@ -244,4 +247,7 @@
         </div>
     </main>
     <script src="{% static 'education/js/course_2x2_def_1.js' %}"></script>
+{% endblock %}
+{% block extra_js %}
+<script src=" {% static 'education/js/course_2x2_cll.js' %}"></script>
 {% endblock %}
