@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'stats',
     'comingsoon',
     'aboutus',
+    'library',
 ]
 
 MIDDLEWARE = [

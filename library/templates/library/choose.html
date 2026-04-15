@@ -7,34 +7,27 @@
 {% endblock %}
 
 {% block content %}
+<div class="contentainer">
 <div class="section-title-container">
-    <p class="section-title">{% trans "What do you need?" %}</p>
+    <h1 class="section-title">{% trans "What do you need?" %}</h1>
 </div>
 
 <div class="cubes-row-wrapper">
     <div class="cubes-row">
-        <h1>2x2</h1>
-        <div class="cube-card a-button" data-href="">
+        <div class="card-button cube-card a-button" data-href="{% url 'def_2x2' %}">
             <img src="{% static 'education/images/2x2-img-1.png' %}" alt="2x2 Cube" class="cube-image">
             <div class="cube-label">
-                <h2>{% block trans %} Default {% endblocktrans %}</h2>
-            </div>
-            <div class="card-actions">
-                <span class="card-button" data-href="{% url 'course_2x2_def_introduction' %}"><a class="link-button a-button"  href="">{% trans "For beginners" %}</a></span>
-                <span class="card-button" data-href="{% url 'course_2x2_cll_introduction' %}"><a class="link-button a-button" href="">CLL</a></span>
+                <h3>2x2 {% block trans %} Default {% endblock trans %}</h3>
             </div>
         </div>
-        <div class="cube-card a-button">
-            <img src="{% static 'education/images/3x3-img.png' %}" alt="3x3 Cube" class="cube-image">
+        <div class="card-button cube-card a-button" data-href="{% url 'cll_2x2' %}">
+            <img src="{% static 'education/images/2x2-img-1.png' %}" alt="3x3 Cube" class="cube-image">
             <div class="cube-label">
-                <h2>CLL</h2>
-            </div>
-            <div class="card-actions">
-                <span class="card-button" data-href="{% url 'comingsoon' %}">{% trans "Coming soon" %}</span>
-                <span class="card-button" data-href="{% url 'comingsoon' %}">{% trans "Coming soon" %}</span>
+                <h3>2x2 CLL</h3>
             </div>
         </div>
     </div>
+</div>
 </div>
 <script src="{% static 'education/js/choose-cube.js' %}"></script>
 {% endblock %}
