@@ -8,11 +8,10 @@
 }
 .video{
   display: flex;
-  height: 200px;
-  width: 200px;
+  height: 180px;
+  width: 180px;
   background-color: rgb(75, 75, 75);
   z-index: 2;
-  position: absolute;
   border-radius: 20px;
   justify-content: center;
   align-items: center;
@@ -21,7 +20,7 @@
 
 .formula_button{
   display: block;
-
+  cursor: pointer;
 }
 
 .content h1,
@@ -102,7 +101,15 @@
 
 @media (max-width: 768px) {
 
-  .grid{display: none;}
+  .grid{flex-direction: column;
+  width: 90%;
+  }
+
+  .row{
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
 
   
 .content1{
@@ -112,7 +119,10 @@
 }
 .formula-card{
   height: fit-content;
-  width: 180px;
+  width: 300px;
+}
+.formula > p{
+  font-size: 20px;
 }
 .cool-card{
   height: 245px;

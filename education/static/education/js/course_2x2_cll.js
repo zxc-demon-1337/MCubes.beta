@@ -3,38 +3,53 @@ vidWrapper = document.getElementById('vid_wrapper')
 video = document.getElementById('video')
 const gap = 10
 console.log(buttons)
-buttons.forEach(btn => {
+function resetAllCards() {
+    document.querySelectorAll('.formula-card').forEach(card => {
+        const img = card.querySelector('img');
+        const vidWrapper = card.querySelector('.vid_wrapper');
+        const video = card.querySelector('.video_player');
+
+        if (img) img.style.display = 'block';
+        if (vidWrapper) vidWrapper.style.display = 'none';
+        if (video) {
+            video.pause();
+        }
+    });
+    document.querySelectorAll('.formula_button').forEach(b => b.style.color = '#fff');
+}
+
+document.querySelectorAll('.formula_button').forEach(btn => {
     btn.addEventListener('click', (e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        var x = rect.left;
-        var y = rect.top;
-        const height = rect.height;
-        const width = rect.width;
+        resetAllCards();
 
-        console.log('x y added:', 'x -', x, 'y -', y)
-        console.log('width=', width, 'height=', height)
-        y = y - 200 -  height - gap - 20
-        console.log('---', (width - 200) / 2)
-        x = x + (width - 200) / 2
+        const card = e.currentTarget.closest('.formula-card');
+        const img = card.querySelector('img');
+        const vidWrapper = card.querySelector('.vid_wrapper');
+        const video = card.querySelector('.video_player');
 
-        vidWrapper.style.left = `${x}px`;
-        vidWrapper.style.top  = `${y}px`;
-        vidWrapper.style.display = 'flex';
-        console.log('finsl position: x=', x, 'y=', y)
-        
         const fileName = e.currentTarget.dataset.src;
-        video.src = "/static/education/videos/cll/" + fileName + ".webm";
-        console.log(fileName)
-        e.currentTarget.style.color = '#C04848'
-    })
+        video.src = `/static/education/videos/cll/${fileName}.webm`;
+        video.load();               
+        video.play().catch(() => {}); 
+        img.style.display = 'none';
+        vidWrapper.style.display = 'flex';
+
+        const rect = e.currentTarget.getBoundingClientRect();
+        const vidW = 180;
+        const vidH = 180;
+
+        vidWrapper.style.left = `${rect.left + window.scrollX + (rect.width - vidW) / 2}px`;
+        vidWrapper.style.top  = `${rect.top + window.scrollY - vidH - rect.height - 10}px`;
+
+        e.currentTarget.style.color = '#C04848';
+    });
 });
 
 document.addEventListener('click', (e) => {
-    const isInsideWrapper = vidWrapper.contains(e.target);
+    const isInsideWrapper = e.target.closest('.vid_wrapper');
     const isInsideButton  = e.target.closest('.formula_button');
+    
     if (!isInsideWrapper && !isInsideButton) {
-        vidWrapper.style.display = 'none';
-        buttons.forEach(btn => btn.style.color = '#fff');
-
+        resetAllCards(); 
     }
 });

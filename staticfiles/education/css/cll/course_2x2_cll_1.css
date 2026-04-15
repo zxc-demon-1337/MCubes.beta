@@ -8,11 +8,21 @@
 }
 .video{
   display: flex;
-  height: 200px;
-  width: 200px;
-  background-color: red;
+  height: 180px;
+  width: 180px;
+  background-color: rgb(75, 75, 75);
   z-index: 2;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
 }
+
+
+.formula_button{
+  display: block;
+  cursor: pointer;
+}
+
 .content h1,
 .content .note {
   text-align: center;
